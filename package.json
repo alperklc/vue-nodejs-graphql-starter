@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/alperklc/express-mongo-graphql-starter/issues"
   },
-  "homepage": "https://github.com/alperklc/express-mongo-graphql-starter#readme"
+  "homepage": "https://github.com/alperklc/express-mongo-graphql-starter#readme",
+  "devDependencies": {
+    "eslint": "^4.18.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
 }
