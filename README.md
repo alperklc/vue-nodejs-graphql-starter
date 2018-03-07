@@ -5,8 +5,8 @@ A starter API project with nodejs + express + mongo + graphql (apollo) stack, se
 Using a mongo database on default port and creating two collections: `User` and `Record`. Collections have a 1-n relation.
 
 Api is running on port number `3333`, serving two endpoints:
-> `/auth` signup and authentication, open for everyone
-> `/graphql` basic crud operations and search of record entity, requires Authorization token on header
+- `/auth` signup and authentication, open for everyone
+- `/graphql` basic crud operations and search of record entity, requires Authorization token on header
 
 ## Usage of API
 
@@ -14,7 +14,7 @@ Any API testing tool like Postman would work. API responds as expected, if the r
 
 Sample authentication queries to paste to the request body:
 
->Signup:
+-Signup:
 ```
 { 
   "query": "mutation SignupUserMutation($email: String, $password: String, $username: String) {
@@ -24,7 +24,7 @@ Sample authentication queries to paste to the request body:
 } 
 ```
 
->Authentication of a user:
+-Authentication of a user:
 ```
 {
   "query": "mutation SigninUserMutation($email: String!, $password: String!) { authenticateUser(email: $email, password: $password) { user { id username updatedAt } token }
@@ -36,7 +36,7 @@ Sample authentication queries to paste to the request body:
 CRUD and search queries for Record entity:
 We will get a token after login via `authenticateUser` mutation on auth endpoint. Following examples are requiring this token specified on the header (Authorization: `token`). CRUD operations are restricted to the given user.
 
->Create record:
+-Create record:
 ```
 {
   "query": "mutation createRecord($description: String) {
@@ -48,7 +48,7 @@ We will get a token after login via `authenticateUser` mutation on auth endpoint
 }
 ```
 
->Update record:
+-Update record:
 ```
 {
   "query": "mutation updateRecord($description: String $id: ID!) { updateRecord(description: $description id: $id) }",
@@ -59,7 +59,7 @@ We will get a token after login via `authenticateUser` mutation on auth endpoint
 }
 ```
 
->Delete record:
+-Delete record:
 ```
 {
   "query": "mutation deleteRecord($id: ID!){ deleteRecord(id: $id) }",
@@ -69,7 +69,7 @@ We will get a token after login via `authenticateUser` mutation on auth endpoint
 }
 ```
 
->Get a record by ID:
+-Get a record by ID:
 ```
 {
   "query": "query getRecordById($id: ID){ initialRecord: getRecordById(id: $id) { id description } }",
@@ -77,7 +77,7 @@ We will get a token after login via `authenticateUser` mutation on auth endpoint
 }
 ```
 
->Search record:
+-Search record:
 ```
 {
   "query": "query searchRecord($keyword: String! $dateGreaterThanEqual: String! $dateLessThanEqual: String!) { searchRecord(keyword: $keyword, dateGreaterThanEqual: $dateGreaterThanEqual, dateLessThanEqual: $dateLessThanEqual) { id description } }",
