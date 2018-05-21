@@ -1,0 +1,21 @@
+{
+  "name": "vue-nodejs-graphql-starter",
+  "version": "1.0.0",
+  "description": "A starter API project with nodejs + express + mongo + graphql (apollo) and vuejs stack.",
+  "scripts": {
+    "buildBackend": "cd backend && npm install",
+    "buildFrontend": "cd frontend && npm install && npm run build",
+    "build": "npm run buildBackend && npm run buildFrontend",
+    "run": "cd backend && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alperklc/vue-nodejs-graphql-starter.git"
+  },
+  "author": "Alper K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alperklc/vue-nodejs-graphql-starter/issues"
+  },
+  "homepage": "https://github.com/alperklc/vue-nodejs-graphql-starter#readme"
+}
