@@ -83,8 +83,8 @@ export default {
         password: undefined
       },
       loginCredentials: {
-        email: "alperkilci@hotmail.com",
-        password: "1234"
+        email: undefined,
+        password: undefined
       },
       queries
     };
