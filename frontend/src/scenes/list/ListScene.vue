@@ -6,10 +6,11 @@
       <div class="scene__header-search">
         <input
           placeholder="Tap here to search..."
-          v-model="q" />
+          v-model="q">
         <span class="scene__header-search-clear">
           <i
-            v-if="!!q" class="fa fa-times"
+            v-if="!!q"
+            class="fa fa-times"
             @click="q = undefined" />
         </span>
       </div>
