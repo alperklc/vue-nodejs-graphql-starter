@@ -1,4 +1,4 @@
-# mongo-express-vue-node-graphql-starter
+# vue-nodejs-graphql-starter
 
 A starter API project with nodejs + express + mongo + graphql (apollo) + vuejs stack. This project is intended to be a starting point for bootstrapping a nodejs graphql api and vuejs client.
 
