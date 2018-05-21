@@ -1,0 +1,40 @@
+@import 'sidenav';
+@import 'scene';
+@import 'login-scene';
+@import 'create-scene';
+@import 'list-scene';
+@import 'toast-message';
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+body {
+  background: #fafafa;
+  color: #4d4d4d;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size: 14px;
+
+  a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
+  a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
+
+  .loading-indicator {
+    text-align: center;
+    margin-top: 18px;
+    font-size: large;
+  }
+}
