@@ -1,6 +1,5 @@
 .login-scene {
   background-image: url("../assets/background.png");
-  background-size: cover;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -13,11 +12,15 @@
 
   .form-container {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.55);
     padding: 12px 0px;
 
     .logo-container {
       text-align: center;
+
+      img {
+        width: 290px;
+      }
     }
   }
 
