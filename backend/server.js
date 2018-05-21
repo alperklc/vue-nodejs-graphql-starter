@@ -7,19 +7,20 @@ const jwt = require('jsonwebtoken')
 const config = require('./config')
 const schema = require('./graphql')
 
+const cors = require('cors')
+
 // connect to mongo db
 const mongoUri = config.mongo.host
 mongoose.connect(mongoUri, {
-  server: {
-    socketOptions: {
-      keepAlive: 1
-    }
-  }
+  keepAlive: 300000,
+  connectTimeoutMS: 30000,
+  autoReconnect: true,
+  promiseLibrary: global.Promise
 })
-mongoose.Promise = global.Promise
 
 const app = express()
 
+app.use(cors())
 app.use(bodyParser.json())
 
 const buildOptions = (req, res) => {

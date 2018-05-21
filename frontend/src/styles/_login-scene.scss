@@ -1,0 +1,61 @@
+.login-scene {
+  background-image: url("../assets/background.png");
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 12px 0px;
+
+    .logo-container {
+      text-align: center;
+    }
+  }
+
+  &__selector {
+    transition: 0.5s;
+    margin: 10px 40px;
+    text-decoration: none;
+    color: #818181;
+  }
+
+  &__selector:hover,
+  &__selector:focus,
+  &__selector--active {
+    color: #f1f1f1 !important;
+  }
+
+  &__form-container {
+    width: 272px;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    input {
+      width: calc(100% - 24px);
+      padding: 6px 11px;
+      display: block;
+      margin: 5px 0;
+      background-color: transparent;
+      color: #fff;
+      border: 1px groove;
+    }
+
+    button {
+      width: 100%;
+      height: 27px;
+      border-color: transparent;
+      margin: 5px 0;
+    }
+  }
+}

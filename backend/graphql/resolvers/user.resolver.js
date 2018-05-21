@@ -12,6 +12,8 @@ const SALT_ROUNDS = 10
 const salt = bcryptjs.genSaltSync(SALT_ROUNDS)
 const expiresIn = 60 * 60 * 24 // expires in 24 hours
 
+const returnErr = err => new Error(err)
+
 /**
  * Authenticates the user
  * @param {Object} user - The user object returned from data layer.
@@ -104,7 +106,7 @@ module.exports = {
       return findUser(email)
         .then(user => authenticateUser(user, password))
         .then(user => generateToken(user))
-        .catch(err => new Error(err))
+        .catch(returnErr)
     },
 
     signupUser: (_, {
@@ -118,7 +120,7 @@ module.exports = {
         return findUser(email)
           .then(user => createUser(user, email, username, password))
           .then(user => generateToken(user))
-          .catch(err => new Error(err))
+          .catch(returnErr)
       } else {
         return new Error('Please enter a valid email address.')
       }

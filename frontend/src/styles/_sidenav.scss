@@ -1,0 +1,37 @@
+.side-nav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  background-color: #4d4d4d;
+  transition: 0.5s;
+  padding-top: 48px;
+  color: #f1f1f1 !important;
+  z-index: 3;
+
+  &__button {
+    display: block;
+    padding: 8px 30px;
+    text-decoration: none;
+    color: #818181;
+    transition: 0.2s;
+  }
+
+  &__button:hover,
+  &__button:focus,
+  &__button--active {
+    color: #f1f1f1 !important;
+  }
+
+  &__bottom{
+    bottom: 60px;
+    position: absolute;
+    .logout-link {
+      height: 48px;
+      margin-left: 30px;
+    }
+  }
+}
+
+.side-nav--left--hidden {
+  margin-left: -180px;
+}

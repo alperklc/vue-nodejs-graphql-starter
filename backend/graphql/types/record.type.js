@@ -3,6 +3,7 @@ module.exports = `
     id: ID! @isUnique
     createdAt: DateTime!
     updatedAt: DateTime!
+    date: DateTime!
     description: String!
     user: User! @relation(name: "UserOnRecord")
   }
@@ -13,8 +14,8 @@ module.exports = `
   }
 
   extend type Mutation {
-    updateRecord(id: ID!, description: String): ID,
+    updateRecord(id: ID!, date: DateTime, description: String): ID,
     deleteRecord(id: ID!): Boolean,
-    createRecord(description: String): Record
+    createRecord(description: String, date: DateTime!): Record
   }
 `
