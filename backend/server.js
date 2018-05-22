@@ -13,7 +13,8 @@ const path = require('path')
 const serveStatic = require('serve-static')
 
 // connect to mongo db
-const mongoUri = config.mongo.host
+const mongoUri = process.env.MONGODB_URI || config.mongo.host
+
 mongoose.connect(mongoUri, {
   keepAlive: 300000,
   connectTimeoutMS: 30000,
@@ -49,11 +50,13 @@ app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions))
 // auth is not secured, only used for signup and authentication
 app.use('/auth', bodyParser.json(), graphqlExpress({ schema: schema.auth }))
 
-app.listen(config.port, () => {
-  console.log('GraphQL listening at %s', config.port)
+const port = process.env.PORT || config.port
+
+app.listen(port, () => {
+  console.log('GraphQL listening at %s', port)
 })
 
 // serve static files of frontend app after frontend build
-app.use(serveStatic(`${__dirname}/../frontend/dist/`));
+app.use(serveStatic(`${__dirname}/../frontend/dist/`))
 
 module.exports = app

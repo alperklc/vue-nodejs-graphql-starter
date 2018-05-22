@@ -92,7 +92,7 @@ export default {
   created() {
     this.apolloClient = new ApolloClient({
       link: new HttpLink({
-        uri: "http://localhost:4040/auth"
+        uri: `http://localhost:${process.env.PORT}/auth`
       }),
       cache: new InMemoryCache(),
       connectToDevTools: true
