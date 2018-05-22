@@ -18,7 +18,7 @@ const authLink = setContext((_, { headers }) => ({
 }));
 
 const httpLink = new createHttpLink({
-  uri: `http://localhost:${process.env.PORT}/graphql`
+  uri: "/graphql"
 });
 
 const apolloClient = new ApolloClient({
