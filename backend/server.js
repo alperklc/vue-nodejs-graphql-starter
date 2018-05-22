@@ -13,7 +13,7 @@ const path = require('path')
 const serveStatic = require('serve-static')
 
 // connect to mongo db
-const mongoUri = process.env.MONGODB_URI || config.mongo.host
+const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/starter"
 
 mongoose.connect(mongoUri, {
   keepAlive: 300000,
