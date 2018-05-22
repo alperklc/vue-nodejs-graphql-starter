@@ -6,6 +6,7 @@
     "buildBackend": "cd backend && npm install",
     "buildFrontend": "cd frontend && npm install && npm run build",
     "build": "npm run buildBackend && npm run buildFrontend",
+    "start": "node ./backend/index.js",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
