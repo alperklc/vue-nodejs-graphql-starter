@@ -9,6 +9,9 @@ const schema = require('./graphql')
 
 const cors = require('cors')
 
+const path = require('path')
+const serveStatic = require('serve-static')
+
 // connect to mongo db
 const mongoUri = config.mongo.host
 mongoose.connect(mongoUri, {
@@ -49,5 +52,8 @@ app.use('/auth', bodyParser.json(), graphqlExpress({ schema: schema.auth }))
 app.listen(config.port, () => {
   console.log('GraphQL listening at %s', config.port)
 })
+
+// serve static files of frontend app after frontend build
+app.use(serveStatic(`${__dirname}/../frontend/dist/`));
 
 module.exports = app
