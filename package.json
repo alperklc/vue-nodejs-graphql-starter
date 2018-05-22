@@ -6,8 +6,7 @@
     "buildBackend": "cd backend && npm install",
     "buildFrontend": "cd frontend && npm install && npm run build",
     "build": "npm run buildBackend && npm run buildFrontend",
-    "runBackend": "cd backend && npm run start",
-    "heroku-postbuild": "npm run build && npm run runBackend"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
