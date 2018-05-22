@@ -31,13 +31,13 @@ if (error) {
 }
 
 const config = {
-  env: envVars.NODE_ENV,
-  port: envVars.PORT,
+  env: process.env.NODE_ENV || envVars.NODE_ENV,
+  port: process.env.PORT || envVars.PORT,
   mongooseDebug: envVars.MONGOOSE_DEBUG,
-  jwtSecret: envVars.JWT_SECRET,
+  jwtSecret: process.env.JWT_SECRET || envVars.JWT_SECRET,
   mongo: {
-    host: envVars.MONGO_HOST,
-    port: envVars.MONGO_PORT
+    host: process.env.MONGO_HOST || envVars.MONGO_HOST,
+    port: process.env.MONGO_PORT || envVars.MONGO_PORT
   }
 }
 

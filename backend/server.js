@@ -50,10 +50,8 @@ app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions))
 // auth is not secured, only used for signup and authentication
 app.use('/auth', bodyParser.json(), graphqlExpress({ schema: schema.auth }))
 
-const port = process.env.PORT || config.port
-
-app.listen(port, () => {
-  console.log('GraphQL listening at %s', port)
+app.listen(config.port, () => {
+  console.log('GraphQL listening at %s', config.port)
 })
 
 // serve static files of frontend app after frontend build
