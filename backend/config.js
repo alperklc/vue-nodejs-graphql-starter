@@ -36,8 +36,8 @@ const config = {
   mongooseDebug: envVars.MONGOOSE_DEBUG,
   jwtSecret: process.env.JWT_SECRET || envVars.JWT_SECRET,
   mongo: {
-    host: process.env.MONGO_HOST || envVars.MONGO_HOST,
-    port: process.env.MONGO_PORT || envVars.MONGO_PORT
+    host: envVars.MONGO_HOST,
+    port: envVars.MONGO_PORT
   }
 }
 
