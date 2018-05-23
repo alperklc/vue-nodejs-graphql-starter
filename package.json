@@ -2,12 +2,13 @@
   "name": "vue-nodejs-graphql-starter",
   "version": "1.0.0",
   "description": "A starter API project with nodejs + express + mongo + graphql (apollo) and vuejs stack.",
+  "main": "./backend/index.js",
   "scripts": {
     "buildBackend": "cd backend && npm install",
     "buildFrontend": "cd frontend && npm install && npm run build",
     "build": "npm run buildBackend && npm run buildFrontend",
-    "runBackend": "cd backend && npm run start",
-    "heroku-postbuild": "npm run build && npm run runBackend"
+    "start": "node ./backend/index.js",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
